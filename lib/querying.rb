@@ -30,11 +30,10 @@ end
 
 def select_name_and_series_subgenres_of_authors
   "
-  SELECT DISTINCT characters.species, COUNT(characters.species)
-  FROM characters
-  GROUP BY characters.species
-  ORDER BY characters.species
-  DESC LIMIT 1
+  SELECT authors.name, subgenres.name
+  FROM authors
+  JOIN series ON series.author_id = authors.id
+  JOIN subgenres ON subgenres.id = series.subgenre_id
   "
 end
 
