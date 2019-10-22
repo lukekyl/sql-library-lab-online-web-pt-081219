@@ -20,10 +20,11 @@ end
 
 def select_value_and_count_of_most_prolific_species
   "
-  SELECT characters.species, count(DISTINCT characters.species)
+  SELECT DISTINCT characters.species, COUNT(characters.species)
   FROM characters
+  GROUP BY characters.species
   ORDER BY characters.species
-  DESC Limit 1
+  DESC LIMIT 1
   "
 end
 
