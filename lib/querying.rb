@@ -47,7 +47,6 @@ def select_series_title_with_most_human_characters
   GROUP BY character_books.character_id HAVING characters.species IS 'human'
   ORDER BY COUNT(character_books.character_id)
   ASC LIMIT 1
-
   "
 end
 
